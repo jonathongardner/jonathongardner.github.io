@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.7a3f699cd54b40a2633973d847684199.js"
+  "/precache-manifest.652139250d7784385c85ed28df24bcbc.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "jgard"});

@@ -1,16 +1,22 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <section id="app">
+    <div class="hero is-fullheight is-default is-bold">
+      <nav-bar />
+      <router-view class="hero-body"/>
+      <footer-bar />
     </div>
-    <router-view/>
-  </div>
+  </section>
 </template>
 
 <script>
+import NavBar from '@/components/common/nav-bar'
+import FooterBar from '@/components/common/footer-bar'
 export default {
   name: 'App',
+  components: {
+    NavBar,
+    FooterBar,
+  },
   mounted () {
     const path = localStorage.getItem('path');
     if(path) {
@@ -20,7 +26,7 @@ export default {
   }
 }
 </script>
-<style>
+<style lang='scss'>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
