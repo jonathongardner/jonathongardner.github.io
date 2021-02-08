@@ -21,18 +21,15 @@ const routes = [
     name: 'about',
     component: () => import(/* webpackChunkName: "about" */ '@/views/Common/AboutPage.vue')
   },
-    {
-      path: '/not-found',
-      name: 'not-found',
-      component: () => import('@/views/Error/NotFoundPage.vue'),
-      meta: {
-        breadcrumbs: []
-      },
-    },
-    {
-      path: '*',
-      redirect: 'not-found',
-    }
+  {
+    path: '/not-found',
+    name: 'not-found',
+    component: () => import('@/views/Error/NotFoundPage.vue'),
+  },
+  {
+    path: '*',
+    redirect: 'not-found',
+  }
 ]
 
 const router = new VueRouter({

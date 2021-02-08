@@ -94,6 +94,7 @@ export default {
         { label: 'HisScript', desc: 'scripture memory', href: 'https://hisscript.firebaseapp.com/' },
         { label: 'Slots JWT', desc: 'rails JWT authentication gem', href: 'https://github.com/jonathongardner/slots-jwt' },
         { label: 'GraphQL Lazy Load', desc: 'rails GraphQL performance gem', href: 'https://github.com/jonathongardner/graphql_lazy_load' },
+        { label: 'EasyNCRYPTION', desc: 'VueJS app for encrypting files', href: 'https://jonathongardner.github.io/easyncryption#/' },
       ],
     }
   },
