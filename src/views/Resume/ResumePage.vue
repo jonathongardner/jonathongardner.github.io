@@ -33,8 +33,7 @@
           </p>
           <h2>Personal Projects</h2>
           <p>
-            I am currently working on <a href='https://ath-ex.app/' target="_blank">AthEx</a> which is a fantasy sports
-            site. It is done using VueJS and Ruby on Rails with GraphQL. To support this project I created two gems
+            To support some projects I've worked on I created two gems
             <a href='https://github.com/jonathongardner/slots-jwt' target="_blank">slots-jwt</a> and
             <a href='https://github.com/jonathongardner/graphql_lazy_load' target="_blank">GraphQL Lazy Load</a>.
             slots-jwt is a rails engine to help with authentication by using JSON Web Tokens. The benifit of using
@@ -90,11 +89,11 @@ export default {
         ]
       },
       projects: [
-        { label: 'AthEx', desc: 'fantasy sports', href: 'https://ath-ex.app/' },
         { label: 'HisScript', desc: 'scripture memory', href: 'https://hisscript.firebaseapp.com/' },
         { label: 'Slots JWT', desc: 'rails JWT authentication gem', href: 'https://github.com/jonathongardner/slots-jwt' },
         { label: 'GraphQL Lazy Load', desc: 'rails GraphQL performance gem', href: 'https://github.com/jonathongardner/graphql_lazy_load' },
         { label: 'EasyNCRYPTION', desc: 'VueJS app for encrypting files', href: 'https://jonathongardner.github.io/easyncryption#/' },
+        // { label: 'Crazy Games', desc: 'VueJS app for simple 1 player games', href: 'https://jonathongardner.github.io/crazy-games/#/' },
       ],
     }
   },
