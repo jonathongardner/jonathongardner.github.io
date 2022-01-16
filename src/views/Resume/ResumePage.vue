@@ -92,8 +92,8 @@ export default {
         { label: 'HisScript', desc: 'scripture memory', href: 'https://hisscript.firebaseapp.com/' },
         { label: 'Slots JWT', desc: 'rails JWT authentication gem', href: 'https://github.com/jonathongardner/slots-jwt' },
         { label: 'GraphQL Lazy Load', desc: 'rails GraphQL performance gem', href: 'https://github.com/jonathongardner/graphql_lazy_load' },
-        { label: 'EasyNCRYPTION', desc: 'VueJS app for encrypting files', href: 'https://jonathongardner.github.io/easyncryption#/' },
-        // { label: 'Crazy Games', desc: 'VueJS app for simple 1 player games', href: 'https://jonathongardner.github.io/crazy-games/#/' },
+        { label: 'EasyNCRYPTION', desc: 'VueJS app for encrypting files', href: '/easyncryption' },
+        { label: 'Crazy Games', desc: 'VueJS app for simple 1 player games', href: '/crazy-games' },
       ],
     }
   },

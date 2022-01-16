@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.feff3fa716f854110c458be19deb630b.js"
+  "/crazy-games/precache-manifest.14aa5be3da955d53906f2b596a98b323.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "jgard"});
+workbox.core.setCacheNameDetails({prefix: "crazy-games"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
