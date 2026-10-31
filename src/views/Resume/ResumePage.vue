@@ -12,7 +12,7 @@
             Jonathon Gardner
           </h1>
           <h2 class="subtitle is-4">
-            Full Stack Developer
+            Software Engineer
           </h2>
         </div>
       </div>
@@ -24,32 +24,26 @@
           </p>
           <h1>About</h1>
           <p>
-            I am a full stack developer currently working at Cisco. I work with a variety of technologies
-            including Ruby on Rails, Sinatra, GraphQL, Sidekiq (with Redis), MariaDB (MySQL), MongoDB and React.
-            I mostly work on the backend (APIs/DBs) but will occasionally help with the UI when needed. My preferred and
-            strongest UI framework is VueJS though. One of my passions in programming is perfomance and I enjoy
-            doing that through optimizing database models/structures. You can see my full resume
-            <a href='/content/JonathonGardnerResume.pdf' target="_blank">here</a>
+            I am a software engineer at Cisco, where I help build an application that scans binary artifacts for security risks. It unpacks binaries,
+            archives, compressed files, and disk images into their underlying contents, then identifies software bills of materials (SBOMs) and exposed
+            credentials. The application also checks potential credentials against APIs to reduce false positives. Our stack includes Go, Ruby, AWS,
+            MySQL, MongoDB, Sidekiq, River, and PostgreSQL. I recently helped my team adopt Go, and I enjoy working with its speed and robustness.
+            Ruby and Rails make it easy to build quickly, while Go offers performance and reliability. I especially enjoy improving performance through
+            system design and database query optimization. You can see my full resume
+            <a href='/content/JonathonGardnerResume.pdf' target="_blank" rel="noopener noreferrer">here</a>
           </p>
           <h2>Personal Projects</h2>
           <p>
-            To support some projects I've worked on I created two gems
-            <a href='https://github.com/jonathongardner/slots-jwt' target="_blank">slots-jwt</a> and
-            <a href='https://github.com/jonathongardner/graphql_lazy_load' target="_blank">GraphQL Lazy Load</a>.
-            slots-jwt is a rails engine to help with authentication by using JSON Web Tokens. The benifit of using
-            JWT is that most request can be authenticated without touching the database. GraphQL Lazy Load is a gem that
-            can be integrated with ruby GraphQL to help reduce N+1 queries.
-          </p>
-          <p>
-            Another project I am working on is <a href='https://hisscript.firebaseapp.com/' target="_blank">HisScript</a> which is a
-            progressive web app to help memorize scripture. It's written in Javascript and VueJS using firebase.
+            I no longer have time for personal projects. Now I have kids and I would rather spend time with them
+            or go for a run/bike ride. Feel free to view my
+            <a href='https://github.com/jonathongardner?tab=repositories' target="_blank" rel="noopener noreferrer">recent repositories</a>
+            though because I occasionally get some time and mes around with GoLang. I also Fork some different
+            OpenSource repos to implement different fixes.
           </p>
           <h2>Showcase Projects</h2>
-          <p>
-            <ul>
-              <li v-for='project in projects' :key='project.label'><a :href='project.href' target="_blank">{{ project.label }}</a> - {{ project.desc }}</li>
-            </ul>
-          </p>
+          <ul>
+              <li v-for='project in projects' :key='project.label'><a :href='project.href' target="_blank" rel="noopener noreferrer">{{ project.label }}</a> - {{ project.desc }}</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -63,37 +57,43 @@ export default {
     return {
       allSkills: {
         lang: [
+          { label: 'GoLang' },
           { label: 'Ruby' },
           { label: 'GraphQL' },
-          { label: 'Javascript' },
+        ],
+        disks: [
+          { label: 'GuestFS' },
+          { label: 'LibArchive' },
+          { label: 'go-diskfs' },
+          { label: 'Squashfs' },
+        ],
+        standards: [
+          { label: 'SPDX' },
+          { label: 'CycloneDX' },
+          { label: 'Open Container' },
         ],
         framework: [
+          { label: 'River Queue' },
           { label: 'Ruby on Rails' },
-          { label: 'Sinatra' },
-          { label: 'ReactJS' },
-          { label: 'Vue.js' },
+          { label: 'Sidekiq' },
         ],
         db: [
-          { label: 'PostgreSQL' },
           { label: 'MongoDB' },
-          { label: 'MySQL' },
+          { label: 'PostgreSQL' },
           { label: 'MariaDB' },
-        ],
-        test: [
-          { label: 'MiniTest' },
-          { label: 'Jest' },
+          { label: 'MySQL' },
         ],
         other: [
           { label: 'git' },
-          { label: 'Linux' }
+          { label: 'AWS' },
+          { label: 'Linux' },
+          { label: 'Syft' },
+          { label: 'Trufflehog' },
         ]
       },
       projects: [
-        { label: 'HisScript', desc: 'scripture memory', href: 'https://hisscript.firebaseapp.com/' },
-        { label: 'Slots JWT', desc: 'rails JWT authentication gem', href: 'https://github.com/jonathongardner/slots-jwt' },
-        { label: 'GraphQL Lazy Load', desc: 'rails GraphQL performance gem', href: 'https://github.com/jonathongardner/graphql_lazy_load' },
-        { label: 'EasyNCRYPTION', desc: 'VueJS app for encrypting files', href: '/easyncryption' },
-        { label: 'Crazy Games', desc: 'VueJS app for simple 1 player games', href: '/crazy-games' },
+        { label: 'a2zar', desc: 'A pure go archive reader for uncommon archive formats', href: 'https://github.com/jonathongardner/a2zar' },
+        { label: 'Crazy Games', desc: 'VueJS app for simple 1 player games', href: '/crazy-games/' },
       ],
     }
   },
@@ -113,9 +113,13 @@ export default {
         // light baby blue
         toReturn['background-color'] = '#fffeb8'
       }
-      if (skillType === 'test') {
+      if (skillType === 'disks') {
         // light green
         toReturn['background-color'] = '#cae8cd'
+      }
+      if (skillType === 'standards') {
+        // light green
+        toReturn['background-color'] = '#B3FCF6'
       }
 
       return toReturn
