@@ -4,13 +4,14 @@
       <div class="container">
         <div class="navbar-brand">
           <router-link class="navbar-item" to="/">
-            <img src="img/icons/android-chrome-512x512.png" alt="Logo">
+            <img src="/img/icons/android-chrome-512x512.png" alt="Logo">
           </router-link>
-          <a role="button" class="navbar-burger burger" :class="{ 'is-active' : showNavbar }" data-target="navbarMenu" @click='toggleNavbar'>
+          <button type="button" aria-label="Toggle navigation" :aria-expanded="showNavbar" aria-controls="navbarMenu" class="navbar-burger burger" :class="{ 'is-active' : showNavbar }" data-target="navbarMenu" @click='toggleNavbar'>
             <span></span>
             <span></span>
             <span></span>
-          </a>
+            <span></span>
+          </button>
         </div>
         <div id="navbarMenu" class="navbar-menu" :class="{ 'is-active' : showNavbar }">
           <div class="navbar-end">

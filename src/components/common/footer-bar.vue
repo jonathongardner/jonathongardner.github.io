@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container contact-list">
       <div v-for='footer in footers' :key='footer.label' >
-        <a class='is-link' :href='footer.href' target="_blank">
+        <a class='is-link' :href='footer.href' target="_blank" rel="noopener noreferrer">
           <i :class='footer.icon'></i> {{ footer.label }}
         </a>
       </div>
@@ -26,12 +26,12 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang='scss' scoped>
+<style scoped>
 .contact-list {
   display: flex;
   justify-content: center;
-  div {
-    padding: 0px 10px;
-  }
+}
+.contact-list > div {
+  padding: 0px 10px;
 }
 </style>

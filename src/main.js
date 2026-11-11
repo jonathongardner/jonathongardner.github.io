@@ -1,14 +1,14 @@
-import Vue from 'vue'
-import App from './App.vue'
+import 'bulma/css/bulma.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
+import './assets/main.css'
+
 import './registerServiceWorker'
-import '@/assets/styles.scss'
+import { createApp } from 'vue'
+import App from './App.vue'
 import router from './router'
-import store from './store'
 
-Vue.config.productionTip = false
+const app = createApp(App)
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+app.use(router)
+
+app.mount('#app')

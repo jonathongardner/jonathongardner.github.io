@@ -1,0 +1,15 @@
+:root {
+  color-scheme: light;
+}
+
+html {
+  background: #fff;
+}
+
+body {
+  margin: 0;
+}
+
+.footer {
+  padding: 1.5rem;
+}

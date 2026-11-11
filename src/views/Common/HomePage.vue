@@ -8,9 +8,8 @@ export default {
   name: 'Home'
 }
 </script>
-<style lang='scss'>
+<style>
 #home {
-  // background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ), url(/imgs/durham.jpg) no-repeat center center fixed;
   background-color: #15151a;
   background-position: center;
   background-repeat: no-repeat;

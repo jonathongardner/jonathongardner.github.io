@@ -1,5 +1,5 @@
 <template>
-  <section id="app">
+  <section>
     <div class="hero is-fullheight is-default is-bold">
       <nav-bar />
       <router-view class="hero-body"/>
@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import NavBar from '@/components/common/nav-bar'
-import FooterBar from '@/components/common/footer-bar'
+import NavBar from '@/components/common/nav-bar.vue'
+import FooterBar from '@/components/common/footer-bar.vue'
 export default {
   name: 'App',
   components: {
@@ -21,12 +21,12 @@ export default {
     const path = localStorage.getItem('path');
     if(path) {
       localStorage.removeItem('path');
-      this.$router.replace({ path });
+      this.$router.replace({ path: '/' + path.replace(/^\/+/, '') });
     }
   }
 }
 </script>
-<style lang='scss'>
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
