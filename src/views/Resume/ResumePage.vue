@@ -4,7 +4,7 @@
       <div class="columns is-vcentered">
         <div class="column is-5">
           <figure class="image is-4by3">
-            <img src="/img/icons/android-chrome-512x512.png" alt="Description">
+            <img src="/img/icons/android-chrome-512x512.png" alt="Jonathon Gardner logo">
           </figure>
         </div>
         <div class="column is-6 is-offset-1">
@@ -12,33 +12,29 @@
             Jonathon Gardner
           </h1>
           <h2 class="subtitle is-4">
-            Software Engineer
+            Security Software Engineer
           </h2>
         </div>
       </div>
       <div class='columns'>
         <div class="column is-10 is-offset-1 content is-medium has-text-left">
           <h1>Skills</h1>
-          <p class="tags are-medium" v-for='(skills, type) in allSkills' :key='type'>
-            <span class="tag" v-for='skill in skills' :style='skillColor(type)' :key='skill.label'>{{ skill.label }}</span>
+          <p class="tags are-medium skill-group" v-for='group in skillGroups' :key='group.type'>
+            <strong class="skill-group-label">{{ group.label }}:</strong>
+            <span class="tag" v-for='skill in group.skills' :style='skillColor(group.type)' :key='skill'>{{ skill }}</span>
           </p>
           <h1>About</h1>
           <p>
-            I am a software engineer at Cisco, where I help build an application that scans binary artifacts for security risks. It unpacks binaries,
-            archives, compressed files, and disk images into their underlying contents, then identifies software bills of materials (SBOMs) and exposed
-            credentials. The application also checks potential credentials against APIs to reduce false positives. Our stack includes Go, Ruby, AWS,
-            MySQL, MongoDB, Sidekiq, River, and PostgreSQL. I recently helped my team adopt Go, and I enjoy working with its speed and robustness.
-            Ruby and Rails make it easy to build quickly, while Go offers performance and reliability. I especially enjoy improving performance through
-            system design and database query optimization. You can see my full resume
-            <a href='/content/JonathonGardnerResume.pdf' target="_blank" rel="noopener noreferrer">here</a>
+            I am a security-focused software engineer at Cisco specializing in binary analysis, credential detection, SBOM automation, and scalable
+            backend systems. I build tools that unpack firmware and disk images, identify software components and exposed credentials, and support
+            software supply-chain compliance. My work spans Go and Ruby services, API and data-model performance, and SPDX workflows. You can
+            <a href='/content/JonathonGardnerResume.pdf' target="_blank" rel="noopener noreferrer">download my full résumé</a> for more detail.
           </p>
           <h2>Personal Projects</h2>
           <p>
-            I no longer have time for personal projects. Now I have kids and I would rather spend time with them
-            or go for a run/bike ride. Feel free to view my
-            <a href='https://github.com/jonathongardner?tab=repositories' target="_blank" rel="noopener noreferrer">recent repositories</a>
-            though because I occasionally get some time and mes around with GoLang. I also Fork some different
-            OpenSource repos to implement different fixes.
+            Outside work, I occasionally contribute fixes to open-source projects. You can view my
+            <a href='https://github.com/jonathongardner?tab=repositories' target="_blank" rel="noopener noreferrer">recent repositories on GitHub</a>.
+            When I am not coding, I enjoy spending time with my family, running, and cycling.
           </p>
           <h2>Showcase Projects</h2>
           <ul>
@@ -55,75 +51,35 @@ export default {
   name: 'Resume',
   data() {
     return {
-      allSkills: {
-        lang: [
-          { label: 'GoLang' },
-          { label: 'Ruby' },
-          { label: 'GraphQL' },
-        ],
-        disks: [
-          { label: 'GuestFS' },
-          { label: 'LibArchive' },
-          { label: 'go-diskfs' },
-          { label: 'Squashfs' },
-        ],
-        standards: [
-          { label: 'SPDX' },
-          { label: 'CycloneDX' },
-          { label: 'Open Container' },
-        ],
-        framework: [
-          { label: 'River Queue' },
-          { label: 'Ruby on Rails' },
-          { label: 'Sidekiq' },
-        ],
-        db: [
-          { label: 'MongoDB' },
-          { label: 'PostgreSQL' },
-          { label: 'MariaDB' },
-          { label: 'MySQL' },
-        ],
-        other: [
-          { label: 'git' },
-          { label: 'AWS' },
-          { label: 'Linux' },
-          { label: 'Syft' },
-          { label: 'Trufflehog' },
-        ]
-      },
+      skillGroups: [
+        { type: 'security', label: 'Security and standards', skills: ['SPDX', 'CycloneDX', 'OCI', 'TruffleHog', 'Syft'] },
+        { type: 'development', label: 'Development', skills: ['Go', 'Ruby on Rails', 'GraphQL', 'Sidekiq', 'River'] },
+        { type: 'data', label: 'Data and platforms', skills: ['PostgreSQL', 'MySQL/MariaDB', 'MongoDB', 'AWS', 'Linux', 'Git'] },
+        { type: 'binary', label: 'Binary tooling', skills: ['libguestfs', 'libarchive', 'go-diskfs', 'SquashFS'] },
+      ],
       projects: [
-        { label: 'a2zar', desc: 'A pure go archive reader for uncommon archive formats', href: 'https://github.com/jonathongardner/a2zar' },
-        { label: 'Crazy Games', desc: 'VueJS app for simple 1 player games', href: '/crazy-games/' },
+        { label: 'a2zar', desc: 'A pure Go archive reader for uncommon archive formats', href: 'https://github.com/jonathongardner/a2zar' },
       ],
     }
   },
   methods: {
     skillColor (skillType) {
-      // light orange
-      const toReturn = { 'background-color': '#ffd1b3' }
-      if (skillType === 'lang') {
-        // ruby
-        toReturn['background-color'] = '#dba7a7'
-      }
-      if (skillType === 'db') {
-        // light blue
-        toReturn['background-color'] = '#e2e5ff'
-      }
-      if (skillType === 'framework') {
-        // light baby blue
-        toReturn['background-color'] = '#fffeb8'
-      }
-      if (skillType === 'disks') {
-        // light green
-        toReturn['background-color'] = '#cae8cd'
-      }
-      if (skillType === 'standards') {
-        // light green
-        toReturn['background-color'] = '#B3FCF6'
+      const colors = {
+        security: '#B3FCF6',
+        development: '#fffeb8',
+        data: '#e2e5ff',
+        binary: '#cae8cd',
       }
 
-      return toReturn
+      return { 'background-color': colors[skillType] }
     }
   }
 }
 </script>
+
+<style scoped>
+.skill-group-label {
+  align-self: center;
+  margin-right: 0.25rem;
+}
+</style>

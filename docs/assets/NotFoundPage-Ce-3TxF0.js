@@ -1,1 +1,0 @@
-import{i as e,n as t,r as n,t as r}from"./index-cWAdFZko.js";var i={},a={class:`has-text-centered`};function o(r,i){return e(),n(`div`,a,[...i[0]||=[t(`h1`,null,`Page not found`,-1)]])}var s=r(i,[[`render`,o]]);export{s as default};

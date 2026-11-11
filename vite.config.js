@@ -42,8 +42,8 @@ export default defineConfig({
       filename: 'service-worker.js',
       registerType: 'autoUpdate',
       manifest: {
-        name: 'JGard About',
-        short_name: 'JGard',
+        name: 'Jonathon Gardner | Security Software Engineer',
+        short_name: 'Jonathon Gardner',
         start_url: '/',
         scope: '/',
         display: 'standalone',
